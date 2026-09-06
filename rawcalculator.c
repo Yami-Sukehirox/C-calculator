@@ -3,23 +3,28 @@
 
 int main () {
 	
-	float calcu1, calcu2;
-	int choice = 0;
-	int again = 1;
 	float result;
+	float calcu1, calcu2;
 	float sum = 0;
 	float history[100];
 	float firstNumber[100];
 	float secondNumber[100];
+	float memory = 0;
+	
 	char operation[100];
+	
+	int choice = 0;
+	int again = 1;
 	int count = 0;
 	int decimal = 2;
 	int settingsChoice;
 	int pin;
 	int correctPin = 12345;
-	int attempts, currentPin, newPin;
+	int attempts = 0, currentPin, newPin;
 	int settingsAgain = 1; 
 	int numerator, denominator;
+	int memoryChoice;
+	
 	
 	printf ("-----PASSKEY TO THE CALCULATOR----\n");
 	
@@ -42,7 +47,7 @@ int main () {
 		return 0;
 	}
 	
-	while (choice != 16 && again == 1) {
+	while (choice != 17 && again == 1) {
 	
 	printf ("\nCALCULATOR");
 	printf ("\n1. Addition");
@@ -60,12 +65,13 @@ int main () {
 	printf ("\n13. Fraction");
 	printf ("\n14. Percentage");
 	printf ("\n15. Even or Odd");
-	printf ("\n16. Exit");
+	printf ("\n16. Memory");
+	printf ("\n17. Exit");
 	
 	printf ("\nEnter your choice: ");
 	scanf ("%d",&choice);
 	
-	if (choice == 16) {
+	if (choice == 17) {
 		printf ("\nCalculator closed");
 		break;
 	}
@@ -210,7 +216,7 @@ int main () {
 		
 		else if (choice == 15) {
 			printf ("\nEnter a number: ");
-			scanf("%f", calcu1);
+			scanf("%f", &calcu1);
 			
 			if ((int) calcu1 % 2 == 0) {
 				printf ("\n%.0f is EVEN", calcu1);
@@ -220,7 +226,54 @@ int main () {
 			}
 		}
 		
-	else {
+		else if (choice == 16) {
+			printf ("\n------MEMORY-------\n");
+			printf ("\n1. M+ Add to Memory");
+			printf ("\n2. M- Subtract from Memory");
+			printf ("\n3. MR Recall Memory");
+			printf ("\n4. MC Clear Memory");
+			
+			printf ("\nEnter your choice: ");
+			scanf ("%d", &memoryChoice);
+			
+			if (memoryChoice == 1) {
+
+        printf ("\nEnter number to add: ");
+        scanf ("%f", &calcu1);
+
+        memory = memory + calcu1;
+
+        printf ("\nMemory = %.2f", memory);
+    }
+
+    else if (memoryChoice == 2) {
+
+        printf ("\nEnter number to subtract: ");
+        scanf ("%f", &calcu1);
+
+        memory = memory - calcu1;
+
+        printf ("\nMemory = %.2f", memory);
+    }
+
+    else if (memoryChoice == 3) {
+
+        printf ("\nMemory = %.2f", memory);
+    }
+
+    else if (memoryChoice == 4) {
+
+        memory = 0;
+
+        printf ("\nMemory cleared!");
+    }
+
+    else {
+        printf ("\nInvalid memory choice!");
+    }
+}
+		
+	else  {
 	
 	printf ("\nEnter the calcu1: ");
 	scanf("%f", &calcu1); 
