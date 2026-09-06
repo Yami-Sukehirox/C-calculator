@@ -24,6 +24,7 @@ int main () {
 	int settingsAgain = 1; 
 	int numerator, denominator;
 	int memoryChoice;
+	int unitChoice;
 	
 	
 	printf ("-----PASSKEY TO THE CALCULATOR----\n");
@@ -47,7 +48,7 @@ int main () {
 		return 0;
 	}
 	
-	while (choice != 17 && again == 1) {
+	while (choice != 18 && again == 1) {
 	
 	printf ("\nCALCULATOR");
 	printf ("\n1. Addition");
@@ -66,12 +67,13 @@ int main () {
 	printf ("\n14. Percentage");
 	printf ("\n15. Even or Odd");
 	printf ("\n16. Memory");
-	printf ("\n17. Exit");
+	printf ("\n17. Unit Converter");
+	printf ("\n18. Exit");
 	
 	printf ("\nEnter your choice: ");
 	scanf ("%d",&choice);
 	
-	if (choice == 17) {
+	if (choice == 18) {
 		printf ("\nCalculator closed");
 		break;
 	}
@@ -272,7 +274,65 @@ int main () {
         printf ("\nInvalid memory choice!");
     }
 }
+
+	else if (choice == 18) {
 		
+		printf ("\n------UNIT CONVERTER-------");
+		printf ("\n1. Celsius to Fahrenheit");
+		printf ("\n2. Fahrenheit to Celsius");
+		printf ("\n3. Kilometers to Miles");
+		printf ("\n4. Miles to Kilometers");
+		
+		printf ("\nEnter your choice: ");
+		scanf ("%d", &unitChoice);
+		
+		if (unitChoice == 1) {
+			
+			printf ("\nEnter Celsius: ");
+			scanf ("%f", &calcu1);
+			
+			result = (calcu1 * 9/ 5) + 32;
+			
+			printf ("\nFahrenheit = %.*f", decimal, result);
+		}
+		
+		else if (unitChoice == 2) {
+			
+			printf ("\nEnter Fahrenheit: ");
+			printf ("%d", &calcu1);
+			
+			result ("calcu1 - 32") * 5/ 9;
+			
+			printf ("\nCelsius = %.*f", decimal, result);
+		}
+		
+		else if (unitChoice == 3) {
+
+        printf ("\nEnter Kilometers: ");
+        scanf ("%f", &calcu1);
+
+        result = calcu1 * 0.621371;
+
+        printf ("\nMiles = %.*f", decimal, result);
+    }
+
+    else if (unitChoice == 4) {
+
+        printf ("\nEnter Miles: ");
+        scanf ("%f", &calcu1);
+
+        result = calcu1 * 1.60934;
+
+        printf ("\nKilometers = %.*f", decimal, result);
+    }
+
+    else {
+        printf ("\nInvalid unit choice!");
+    }
+}	
+		
+	}
+	
 	else  {
 	
 	printf ("\nEnter the calcu1: ");
