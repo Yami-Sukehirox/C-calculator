@@ -275,7 +275,7 @@ int main () {
     }
 }
 
-	else if (choice == 18) {
+	else if (choice == 17) {
 		
 		printf ("\n------UNIT CONVERTER-------");
 		printf ("\n1. Celsius to Fahrenheit");
@@ -299,9 +299,9 @@ int main () {
 		else if (unitChoice == 2) {
 			
 			printf ("\nEnter Fahrenheit: ");
-			printf ("%d", &calcu1);
+			printf ("%f", &calcu1);
 			
-			result ("calcu1 - 32") * 5/ 9;
+			result = (calcu1 - 32) *  5 / 9;
 			
 			printf ("\nCelsius = %.*f", decimal, result);
 		}
@@ -330,8 +330,7 @@ int main () {
         printf ("\nInvalid unit choice!");
     }
 }	
-		
-	}
+	
 	
 	else  {
 	
