@@ -150,7 +150,7 @@ int main () {
 				printf ("Enter the new PIN: ");
 				scanf("%d", &newPin);
 				
-				correctPin == newPin;
+				correctPin = newPin;
 				
 				printf ("\nPIN changed succesfully!");
 			}
